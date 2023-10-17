@@ -9,18 +9,18 @@ public class DBCon {
     private Connection con;
 
     public void connect() throws ClassNotFoundException, SQLException, IOException {
-        Properties configuration = new Properties();
-        System.out.println(R.getProperties("database.properties"));
-        configuration.load(R.getProperties("database.properties"));
-        String host = configuration.getProperty("host");
-        String port = configuration.getProperty("port");
-        String name = configuration.getProperty("name");
-        String username = configuration.getProperty("username");
-        String password = configuration.getProperty("password");
+//        Properties configuration = new Properties();
+//        System.out.println(R.getProperties("database.properties"));
+//        configuration.load(R.getProperties("database.properties"));
+//        String host = configuration.getProperty("host");
+//        String port = configuration.getProperty("port");
+//        String name = configuration.getProperty("name");
+//        String username = configuration.getProperty("username");
+//        String password = configuration.getProperty("password");
 
         Class.forName("com.mysql.cj.jdbc.Driver");
-        con = DriverManager.getConnection("jdbc:mysql://" + host + ":" + port + "/" + name + "?serverTimezone=UTC",
-                username, password);
+        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pokemon?serverTimezone=UTC",
+                "vera", "vera");
     }
 
     public void disconnect() throws SQLException {

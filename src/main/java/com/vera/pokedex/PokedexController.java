@@ -1,30 +1,30 @@
 package com.vera.pokedex;
 
-import com.vera.pokedex.util.AlertUtils;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tab;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 
-import java.io.IOException;
-import java.sql.SQLException;
-
 public class PokedexController {
 
-    private final DBCon dbCon;
+    @FXML
+    private Label PV;
 
-    public PokedexController(){
-        dbCon = new DBCon();
-        try {
-            dbCon.connect();
-        } catch (SQLException sqle) {
-            AlertUtils.showError("Error al conectar a la base de datos");
-        } catch (ClassNotFoundException cnfe){
-            AlertUtils.showError("Error al iniciar la aplicación");
-        } catch (IOException ioe){
-            AlertUtils.showError("Error al cargar la configuración");
-        }
-    }
+    @FXML
+    private Label ataque;
+
+    @FXML
+    private Label ataque_especial;
+
+    @FXML
+    private Label defenda;
+
+    @FXML
+    private Label defensa_especial;
+
+    @FXML
+    private Tab descripcion;
 
     @FXML
     private TextArea description;
@@ -36,6 +36,18 @@ public class PokedexController {
     private Label name;
 
     @FXML
-    private TextArea stats;
+    private Label peso;
+
+    @FXML
+    private Label tamanio;
+
+    @FXML
+    private Label tipo1;
+
+    @FXML
+    private Label tipo2;
+
+    @FXML
+    private Label velocidad;
 
 }

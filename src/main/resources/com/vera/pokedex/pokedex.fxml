@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="573.0" prefWidth="408.0" spacing="20.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.vera.pokedex.PokedexController">
+<VBox alignment="CENTER" prefHeight="573.0" prefWidth="408.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.vera.pokedex.PokedexController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -23,12 +23,31 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <TextArea id="Estadisticas" fx:id="stats" editable="false" prefHeight="125.0" prefWidth="478.0" text="Estadisticas" />
+                              <Label layoutX="21.0" layoutY="32.0" prefHeight="17.0" prefWidth="110.0" text="Ataque:" />
+                              <Label layoutX="21.0" layoutY="49.0" prefHeight="17.0" prefWidth="110.0" text="Defensa:" />
+                              <Label layoutX="21.0" layoutY="14.0" prefHeight="17.0" prefWidth="110.0" text="PV:" />
+                              <Label layoutX="21.0" layoutY="69.0" prefHeight="17.0" prefWidth="110.0" text="ataque especial:" />
+                              <Label layoutX="21.0" layoutY="86.0" prefHeight="17.0" prefWidth="110.0" text="defensa especial:" />
+                              <Label layoutX="21.0" layoutY="103.0" prefHeight="17.0" prefWidth="110.0" text="velocidad" />
+                              <Label layoutX="232.0" layoutY="6.0" prefHeight="17.0" prefWidth="110.0" text="Peso:" />
+                              <Label layoutX="232.0" layoutY="32.0" prefHeight="17.0" prefWidth="110.0" text="Tamaño" />
+                              <Label layoutX="232.0" layoutY="61.0" prefHeight="17.0" prefWidth="110.0" text="Tipo1:" />
+                              <Label layoutX="232.0" layoutY="95.0" prefHeight="0.0" prefWidth="110.0" text="Tipo2:" />
+                              <Label fx:id="ataque" layoutX="122.0" layoutY="34.0" prefHeight="17.0" prefWidth="110.0" text="00" />
+                              <Label fx:id="defenda" layoutX="122.0" layoutY="51.0" prefHeight="17.0" prefWidth="110.0" text="00" />
+                              <Label fx:id="PV" layoutX="122.0" layoutY="16.0" prefHeight="17.0" prefWidth="110.0" text="00" />
+                              <Label fx:id="ataque_especial" layoutX="122.0" layoutY="71.0" prefHeight="17.0" prefWidth="110.0" text="00" />
+                              <Label fx:id="defensa_especial" layoutX="122.0" layoutY="88.0" prefHeight="17.0" prefWidth="110.0" text="00" />
+                              <Label fx:id="velocidad" layoutX="122.0" layoutY="105.0" prefHeight="17.0" prefWidth="110.0" text="00" />
+                              <Label fx:id="peso" layoutX="342.0" layoutY="5.0" prefHeight="17.0" prefWidth="110.0" text="00" />
+                              <Label fx:id="tamanio" layoutX="342.0" layoutY="31.0" prefHeight="17.0" prefWidth="110.0" text="00" />
+                              <Label fx:id="tipo1" layoutX="342.0" layoutY="60.0" prefHeight="17.0" prefWidth="110.0" text="text" />
+                              <Label fx:id="tipo2" layoutX="342.0" layoutY="94.0" prefHeight="0.0" prefWidth="110.0" text="text" />
                            </children>
                         </AnchorPane>
                   </content>
                 </Tab>
-                <Tab text="Descripcion">
+                <Tab fx:id="descripcion" text="Descripcion">
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
