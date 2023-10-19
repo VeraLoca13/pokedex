@@ -78,18 +78,9 @@ public class PokedexController {
     @FXML
     private TextField weight;
 
-    private final DBCon con;
-    public PokedexController(){
-        con = new DBCon();
-        try {
-            con.connect();
-        } catch (SQLException sqle){
-            System.out.println("Error al conectar a la base de datos: "+sqle);
-        }catch (ClassNotFoundException cnfe){
-            System.out.println("Error al cargar la aplicacion: "+cnfe);
-        }catch (IOException ioe){
-            System.out.println("Error al cargar la configuracion: "+ioe);
-        }
+    private DBCon con;
+    public void setDBCon(DBCon con){
+        this.con = con;
     }
     public void loadData(){
         listPokemon.getItems().clear();
