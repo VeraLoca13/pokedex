@@ -1,8 +1,6 @@
 package com.vera.pokedex.domain;
 
-import javafx.scene.image.Image;
-
-public class pokemon {
+public class Pokemon {
     int id;
     String name;
     int hp;
@@ -15,9 +13,13 @@ public class pokemon {
     int weight;
     String type1;
     String type2;
+    String description;
     //Image img;
 
-    public pokemon(int id, String name, int hp, int attack, int defense, int special_attack, int special_defense, int speed, int height, int weight, String type1, String type2) {
+    public Pokemon() {
+    }
+
+    public Pokemon(int id, String name, int hp, int attack, int defense, int special_attack, int special_defense, int speed, int height, int weight, String type1, String type2, String description) {
         this.id = id;
         this.name = name;
         this.hp = hp;
@@ -30,6 +32,7 @@ public class pokemon {
         this.weight = weight;
         this.type1 = type1;
         this.type2 = type2;
+        this.description = description;
         //this.img=new Image("file:src/main/resources/img/Pokemon/"+id);
     }
 
@@ -127,5 +130,13 @@ public class pokemon {
 
     public void setType2(String type2) {
         this.type2 = type2;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

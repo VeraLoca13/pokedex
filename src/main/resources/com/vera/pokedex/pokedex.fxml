@@ -1,48 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="573.0" prefWidth="408.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.vera.pokedex.PokedexController">
+<VBox alignment="CENTER" prefHeight="573.0" prefWidth="408.0" spacing="20.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.vera.pokedex.PokedexController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
    <children>
       <AnchorPane prefHeight="605.0" prefWidth="504.0">
          <children>
-            <TabPane layoutY="358.0" prefHeight="183.0" prefWidth="478.0" tabClosingPolicy="UNAVAILABLE">
+            <TabPane layoutY="358.0" prefHeight="183.0" prefWidth="502.0" tabClosingPolicy="UNAVAILABLE">
               <tabs>
                 <Tab text="Estadisticas">
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <Label layoutX="21.0" layoutY="32.0" prefHeight="17.0" prefWidth="110.0" text="Ataque:" />
-                              <Label layoutX="21.0" layoutY="49.0" prefHeight="17.0" prefWidth="110.0" text="Defensa:" />
-                              <Label layoutX="21.0" layoutY="14.0" prefHeight="17.0" prefWidth="110.0" text="PV:" />
-                              <Label layoutX="21.0" layoutY="69.0" prefHeight="17.0" prefWidth="110.0" text="ataque especial:" />
-                              <Label layoutX="21.0" layoutY="86.0" prefHeight="17.0" prefWidth="110.0" text="defensa especial:" />
-                              <Label layoutX="21.0" layoutY="103.0" prefHeight="17.0" prefWidth="110.0" text="velocidad" />
-                              <Label layoutX="232.0" layoutY="6.0" prefHeight="17.0" prefWidth="110.0" text="Peso:" />
-                              <Label layoutX="232.0" layoutY="32.0" prefHeight="17.0" prefWidth="110.0" text="Tamaño" />
-                              <Label layoutX="232.0" layoutY="61.0" prefHeight="17.0" prefWidth="110.0" text="Tipo1:" />
-                              <Label layoutX="232.0" layoutY="95.0" prefHeight="0.0" prefWidth="110.0" text="Tipo2:" />
-                              <Label fx:id="ataque" layoutX="122.0" layoutY="34.0" prefHeight="17.0" prefWidth="110.0" text="00" />
-                              <Label fx:id="defenda" layoutX="122.0" layoutY="51.0" prefHeight="17.0" prefWidth="110.0" text="00" />
-                              <Label fx:id="PV" layoutX="122.0" layoutY="16.0" prefHeight="17.0" prefWidth="110.0" text="00" />
-                              <Label fx:id="ataque_especial" layoutX="122.0" layoutY="71.0" prefHeight="17.0" prefWidth="110.0" text="00" />
-                              <Label fx:id="defensa_especial" layoutX="122.0" layoutY="88.0" prefHeight="17.0" prefWidth="110.0" text="00" />
-                              <Label fx:id="velocidad" layoutX="122.0" layoutY="105.0" prefHeight="17.0" prefWidth="110.0" text="00" />
-                              <Label fx:id="peso" layoutX="342.0" layoutY="5.0" prefHeight="17.0" prefWidth="110.0" text="00" />
-                              <Label fx:id="tamanio" layoutX="342.0" layoutY="31.0" prefHeight="17.0" prefWidth="110.0" text="00" />
-                              <Label fx:id="tipo1" layoutX="342.0" layoutY="60.0" prefHeight="17.0" prefWidth="110.0" text="text" />
-                              <Label fx:id="tipo2" layoutX="342.0" layoutY="94.0" prefHeight="0.0" prefWidth="110.0" text="text" />
+                              <Label layoutX="14.0" layoutY="43.0" prefHeight="17.0" prefWidth="110.0" text="Ataque:" />
+                              <Label layoutX="14.0" layoutY="69.0" prefHeight="17.0" prefWidth="110.0" text="Defensa:" />
+                              <Label layoutX="14.0" layoutY="16.0" prefHeight="17.0" prefWidth="110.0" text="PV:" />
+                              <Label layoutX="140.0" layoutY="43.0" prefHeight="17.0" prefWidth="110.0" text="Ataque Especial:" />
+                              <Label layoutX="140.0" layoutY="69.0" prefHeight="17.0" prefWidth="110.0" text="Defensa Especial:" />
+                              <Label layoutX="330.0" layoutY="69.0" prefHeight="17.0" prefWidth="110.0" text="Velocidad" />
+                              <Label layoutX="345.0" layoutY="16.0" prefHeight="17.0" prefWidth="110.0" text="Peso:" />
+                              <Label layoutX="178.0" layoutY="16.0" prefHeight="17.0" prefWidth="110.0" text="Tamaño" />
+                              <Label layoutX="14.0" layoutY="117.0" prefHeight="17.0" prefWidth="110.0" text="Tipo1:" />
+                              <Label layoutX="251.0" layoutY="117.0" prefHeight="0.0" prefWidth="110.0" text="Tipo2:" />
+                              <TextField fx:id="pv" layoutX="69.0" layoutY="12.0" prefHeight="25.0" prefWidth="97.0" />
+                              <TextField fx:id="height" layoutX="233.0" layoutY="12.0" prefHeight="25.0" prefWidth="97.0" />
+                              <TextField fx:id="weight" layoutX="391.0" layoutY="12.0" prefHeight="25.0" prefWidth="97.0" />
+                              <TextField fx:id="attack" layoutX="69.0" layoutY="39.0" prefHeight="25.0" prefWidth="60.0" />
+                              <TextField fx:id="defense" layoutX="69.0" layoutY="65.0" prefHeight="25.0" prefWidth="60.0" />
+                              <TextField fx:id="special_attack" layoutX="233.0" layoutY="39.0" prefHeight="25.0" prefWidth="60.0" />
+                              <TextField fx:id="special_defense" layoutX="233.0" layoutY="65.0" prefHeight="25.0" prefWidth="60.0" />
+                              <TextField fx:id="speed" layoutX="391.0" layoutY="65.0" prefHeight="25.0" prefWidth="97.0" />
+                              <TextField fx:id="type1" layoutX="69.0" layoutY="113.0" prefHeight="25.0" prefWidth="97.0" />
+                              <TextField fx:id="type2" layoutX="306.0" layoutY="113.0" prefHeight="25.0" prefWidth="97.0" />
                            </children>
                         </AnchorPane>
                   </content>
@@ -60,15 +63,24 @@
             </TabPane>
             <AnchorPane layoutY="-1.0" prefHeight="359.0" prefWidth="313.0">
                <children>
-                  <Label fx:id="name" alignment="CENTER" layoutY="315.0" prefHeight="34.0" prefWidth="313.0" text="NombrePKMN" textAlignment="CENTER">
+                  <Label alignment="CENTER" layoutY="315.0" prefHeight="34.0" prefWidth="97.0" text="Nombre:" textAlignment="CENTER">
                      <font>
                         <Font size="23.0" />
                      </font>
                   </Label>
-                  <ImageView fx:id="image" fitHeight="315.0" fitWidth="313.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="image" fitHeight="277.0" fitWidth="313.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" />
+                  <TextField fx:id="pkmnName" layoutX="97.0" layoutY="320.0" prefHeight="25.0" prefWidth="205.0" />
+                  <Button fx:id="btnNew" layoutY="2.0" mnemonicParsing="false" text="Nuevo" />
+                  <Button fx:id="btnSave" layoutX="54.0" layoutY="2.0" mnemonicParsing="false" text="Guardar" />
+                  <Button fx:id="btnDelete" layoutX="116.0" layoutY="2.0" mnemonicParsing="false" text="Borrar" />
+                  <Button fx:id="btnModify" layoutX="233.0" layoutY="2.0" mnemonicParsing="false" text="Modificar" />
+                  <Button fx:id="btnCancel" layoutX="168.0" layoutY="2.0" mnemonicParsing="false" text="Cancelar" />
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="313.0" layoutY="-1.0" prefHeight="359.0" prefWidth="177.0" />
+            <AnchorPane layoutX="313.0" layoutY="-1.0" prefHeight="359.0" prefWidth="177.0">
+               <children>
+                  <ListView fx:id="listPokemon" prefHeight="360.0" prefWidth="189.0" />
+               </children></AnchorPane>
          </children>
       </AnchorPane>
    </children>
