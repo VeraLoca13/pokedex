@@ -50,7 +50,8 @@ public class DBCon {
     public void deletePokemon(Pokemon pokemon) throws SQLException{
         String sql = "DELETE FROM pokemon WHERE id = ?";
         PreparedStatement sentencia = con.prepareStatement(sql);
-        sentencia.setString(1,""+pokemon.getId());
+        sentencia.setString(1,String.valueOf(pokemon.getId()));
+        sentencia.executeUpdate();
     }
 
     public void modifyPokemon(Pokemon oldPokemon,Pokemon newPokemon) throws SQLException{
@@ -71,17 +72,11 @@ public class DBCon {
         sentencia.setString(13, "" + oldPokemon.getId());
         sentencia.executeUpdate();
     }
-    public Pokemon[] getPokedex() throws SQLException{
+    public ArrayList<Pokemon> getPokedex() throws SQLException{
         String sql = "SELECT * FROM pokemon";
         PreparedStatement sentencia = con.prepareStatement(sql);
         ResultSet resultado = sentencia.executeQuery();
-        int size = 0;
-        if(resultado!=null){
-            resultado.last();
-            size=resultado.getRow();
-            resultado.beforeFirst();
-        }
-        Pokemon[] pokedex = new Pokemon[size];
+        ArrayList <Pokemon> pokedex = new ArrayList<>();
         while (resultado.next()){
             Pokemon pokemon = new Pokemon(
                     resultado.getInt(1),
@@ -98,7 +93,7 @@ public class DBCon {
                     resultado.getString(12),
                     resultado.getString(13)
             );
-            pokedex[resultado.getRow()-1]=pokemon;
+            pokedex.add(pokemon);
         }
         return pokedex;
     }

@@ -54,7 +54,7 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <TextArea id="Descripcion" fx:id="description" editable="false" prefHeight="125.0" prefWidth="478.0" text="Descripcion" />
+                              <TextArea id="Descripcion" fx:id="description" prefHeight="125.0" prefWidth="478.0" wrapText="true" />
                            </children>
                         </AnchorPane>
                   </content>
@@ -63,23 +63,32 @@
             </TabPane>
             <AnchorPane layoutY="-1.0" prefHeight="359.0" prefWidth="313.0">
                <children>
-                  <Label alignment="CENTER" layoutY="315.0" prefHeight="34.0" prefWidth="97.0" text="Nombre:" textAlignment="CENTER">
+                  <Label alignment="CENTER" layoutX="87.0" layoutY="316.0" prefHeight="34.0" prefWidth="97.0" text="Nombre:" textAlignment="CENTER">
                      <font>
                         <Font size="23.0" />
                      </font>
                   </Label>
-                  <ImageView fx:id="image" fitHeight="277.0" fitWidth="313.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" />
-                  <TextField fx:id="pkmnName" layoutX="97.0" layoutY="320.0" prefHeight="25.0" prefWidth="205.0" />
-                  <Button fx:id="btnNew" layoutY="2.0" mnemonicParsing="false" text="Nuevo" />
-                  <Button fx:id="btnSave" layoutX="54.0" layoutY="2.0" mnemonicParsing="false" text="Guardar" />
-                  <Button fx:id="btnDelete" layoutX="116.0" layoutY="2.0" mnemonicParsing="false" text="Borrar" />
-                  <Button fx:id="btnModify" layoutX="233.0" layoutY="2.0" mnemonicParsing="false" text="Modificar" />
-                  <Button fx:id="btnCancel" layoutX="168.0" layoutY="2.0" mnemonicParsing="false" text="Cancelar" />
+                  <ImageView fx:id="image" fitHeight="277.0" fitWidth="313.0" layoutX="-16.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true" />
+                  <TextField fx:id="pkmnName" layoutX="183.0" layoutY="319.0" prefHeight="30.0" prefWidth="122.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font></TextField>
+                  <Button fx:id="btnNew" layoutY="2.0" mnemonicParsing="false" onAction="#nuevo" text="Nuevo" />
+                  <Button fx:id="btnSave" layoutX="54.0" layoutY="2.0" mnemonicParsing="false" onAction="#guardar" text="Guardar" />
+                  <Button fx:id="btnDelete" layoutX="116.0" layoutY="2.0" mnemonicParsing="false" onAction="#borrar" text="Borrar" />
+                  <Button fx:id="btnModify" layoutX="233.0" layoutY="2.0" mnemonicParsing="false" onAction="#modificar" text="Modificar" />
+                  <Button fx:id="btnCancel" layoutX="168.0" layoutY="2.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+                  <Label alignment="CENTER" layoutX="2.0" layoutY="316.0" prefHeight="34.0" prefWidth="38.0" text="ID:" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="pkmnID" layoutX="35.0" layoutY="321.0" prefHeight="25.0" prefWidth="49.0" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="313.0" layoutY="-1.0" prefHeight="359.0" prefWidth="177.0">
                <children>
-                  <ListView fx:id="listPokemon" prefHeight="360.0" prefWidth="189.0" />
+                  <ListView fx:id="listPokemon" onMouseClicked="#cargarPokemon" prefHeight="360.0" prefWidth="189.0" />
                </children></AnchorPane>
          </children>
       </AnchorPane>
